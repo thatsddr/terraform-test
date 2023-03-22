@@ -1,0 +1,3 @@
+credentials "tfe.dev.example.com" {
+  token = var.tfc_token
+}
