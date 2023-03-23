@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: ott
         namespace: flux-system
-      version: ^1.0
+      version: {{ .Values.streamLauncher2.version}}
   values:
     upstreamUrl: {{ .Values.streamLauncher2.upstreamUrl }}
     imagePullSecrets:
