@@ -14,3 +14,5 @@ spec:
       version: ^1.0
   values:
     upstreamUrl: {{ .Values.streamLauncher2.upstreamUrl }}
+    imagePullSecrets:
+      - name: ott-ghcr-io

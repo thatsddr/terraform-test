@@ -1,14 +1,15 @@
 streamLauncher1:
   name: 'stream-launcher-1'
-  upstreamUrl: ''
+  upstreamUrl: 'https://stream.bild-sport.staging.personalstream.tv/v1/master/e237d596efe8bf8a700f8f91f1de8bbe03e0fe29/bild-sport-staging/master.m3u8'
 
 streamLauncher2:
   name: 'stream-launcher-2'
-  upstreamUrl: ''
+  upstreamUrl: 'https://stream.bild-sport.staging.personalstream.tv/v1/master/e237d596efe8bf8a700f8f91f1de8bbe03e0fe29/bild-sport-staging/master.m3u8'
 
 terraform:
   name: 'terraform-test'
   approvePlan: 'auto'
+  interval: 15m
   tfcSecret: 'tfc-secret'
   hostname: 'app.terraform.io'
   organization: 'as-nmt-ott'
