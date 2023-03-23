@@ -24,7 +24,7 @@ jobs:
           VERSION=${{ github.ref.name }}
           rm -rf .cr-release-packages
           mkdir -p .cr-release-packages
-          helm package charts/ --app-version=${VERSION:1} --version=${VERSION:1} --destination_.cr-release-packages
+          helm package charts/ --app-version=${VERSION:1} --v=${VERSION:1} --destination_.cr-release-packages
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
