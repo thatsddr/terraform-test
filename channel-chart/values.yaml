@@ -5,3 +5,18 @@ streamLauncher1:
 streamLauncher2:
   name: 'stream-launcher-2'
   upstreamUrl: ''
+
+terraform:
+  name: 'terraform-test'
+  approvePlan: 'auto'
+  tfcSecret: 'tfc-secret'
+  hostname: 'app.terraform.io'
+  organization: 'as-nmt-ott'
+  workspaces:
+    name: 'ott-channel-operator'
+  vars:
+    - name: name
+      value: 'test-bucket-tfcl'
+  varsFrom:
+    - kind: Secret
+      name: aws-credentials

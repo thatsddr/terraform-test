@@ -1,0 +1,27 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha1
+kind: Terraform
+metadata:
+  name: {{ .Values.terraform.name }}
+  namespace: flux-system
+spec:
+  approvePlan: {{ .Values.terraform.approvePlan }}
+  interval: {{ .Values.terraform.interval }}
+  path: ./
+  sourceRef:
+    kind: GitRepository
+    name: terraform-test
+    namespace: flux-system
+  vars:
+    {{- toYaml .Values.terraform.vars | nindent 4 }}
+  varsFrom:
+    {{- toYaml .Values.terraform.varsFrom | nindent 4 }}
+  runnerPodTemplate:
+    spec:
+      envFrom:
+        - secretRef:
+            name: {{ .Values.terraform.tfcSecret }}
+  cloud:
+    hostname: {{ .Values.terraform.hostname }}
+    organization: {{ .Values.terraform.organization }}
+    workspaces:
+      name: {{ .Values.terraform.workspaces.name }}
