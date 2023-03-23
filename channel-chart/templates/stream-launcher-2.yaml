@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: {{ .Values.streamLauncher2.name }}
+spec:
+  chart:
+    spec:
+      chart: stream-launcher
+      sourceRef:
+        kind: HelmRepository
+        name: ott
+        namespace: flux-system
+      version: ^1.0
+  values:
+    upstreamUrl: {{ .Values.streamLauncher2.upstreamUrl }}
