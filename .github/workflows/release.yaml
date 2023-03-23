@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - '*'
+    branches:
+      - main
 
 jobs:
   release:
@@ -22,6 +24,7 @@ jobs:
       - name: Custom packaging
         run : |
           VERSION=${{ github.ref.name }}
+          echo "Packaging version ${VERSION:1}"
           rm -rf .cr-release-packages
           mkdir -p .cr-release-packages
           helm package charts/ --app-version=${VERSION:1} --v=${VERSION:1} --destination_.cr-release-packages
