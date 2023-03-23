@@ -3,6 +3,7 @@ kind: HelmRelease
 metadata:
   name: {{ .Values.streamLauncher2.name }}
 spec:
+  interval: 2m
   chart:
     spec:
       chart: stream-launcher
