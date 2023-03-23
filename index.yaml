@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  channel-chart:
+  - apiVersion: v2
+    appVersion: 1.14.10
+    created: "2023-03-23T14:48:24.502794287Z"
+    description: A Helm chart that deploys 2 HelmReleases and a Terraform resource
+    digest: 9f30ef21a4e573a63550e2770b06df936bf09ecab886ee9910555cf995f05124
+    name: channel-chart
+    type: application
+    urls:
+    - https://github.com/thatsddr/terraform-test/releases/download/channel-chart-0.1.1/channel-chart-0.1.1.tgz
+    version: 0.1.1
+generated: "2023-03-23T14:48:24.502812288Z"
