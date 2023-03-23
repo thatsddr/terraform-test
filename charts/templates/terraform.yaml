@@ -9,7 +9,7 @@ spec:
   path: ./
   sourceRef:
     kind: GitRepository
-    name: terraform-test
+    name: {{ .Values.terraform.sourceRef.name }}
     namespace: flux-system
   vars:
     {{- toYaml .Values.terraform.vars | nindent 4 }}

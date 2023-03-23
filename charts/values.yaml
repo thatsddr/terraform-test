@@ -21,3 +21,5 @@ terraform:
   varsFrom:
     - kind: Secret
       name: aws-credentials
+  sourceRef:
+    name: "terraform-test"
