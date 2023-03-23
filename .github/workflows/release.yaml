@@ -21,7 +21,7 @@ jobs:
 
       - name: Custom packaging
         run : |
-          VERSION=${{ github.ref.name }}
+          VERSION=${{ github.ref_name }}
           echo "Packaging version ${VERSION:1}"
           rm -rf .cr-release-packages
           mkdir -p .cr-release-packages
